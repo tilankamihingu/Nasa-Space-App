@@ -22,4 +22,69 @@ body{
   padding: 10px;
   display: flex;
   justify-content: center;
+  align-items: center;
+}
+
+.search-container{
+  margin: 10px 0 20px 0;
+  display: flex;
+  justify-content: center;
+}
+
+.search-container > *{
+  display: inline-block;
+}
+
+.search-container p{
+  margin: 0 20px 0 20px;
+  font-size: 40px;
+}
+
+button,
+input,
+select,
+textarea{
+  font-family: inherit;
+  font-size: 100%;
+}
+
+.search-container input[type="text"]{
+  font-family: inherit;
+  outline: none;
+  width: 100%;
+  max-width: 500px;
+  margin: 8px 20px 0 0;
+  padding: 0 0 0 10px;
+}
+
+.search-table{
+  margin: 0 auto;
+  table-layout: fixed;
+  border-collapse: collapse;
+  width: 100%;
+  max-width: 1000px;
+  text-align: left;
+}
+
+.search-table th{
+  background-color: firebrick;
+  color: white;
+}
+
+.search-table tr:nth-child(even){
+  background-color: #cccccc;
+}
+
+.search-table th,td{
+  padding: 10px;
+}
+
+.option-container{
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.option-container p{
+  margin-right: 20px;
 }

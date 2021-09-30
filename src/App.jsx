@@ -2,6 +2,7 @@ import React, {useEffect, useState} from 'react';
 import './App.css';
 import Loader from './Components/Loader';
 import Map from './Components/Map';
+import Search from './Components/Search';
 import {useMainContext} from './Context/context';
 
 function App() {
@@ -23,9 +24,16 @@ function App() {
     }
     fetchEvents();
   },[])
+
+  useEffect(() =>{
+    if(reRenderMarkers !== null){
+      setRenderEvent(reRenderMarkers);
+    }
+  }, [reRenderMarkers])
   return (
     <div className="App">
       {!loading ? <Map eventData={renderEvent} /> : <Loader />}
+      {!loading && <Search />}
     </div>
   );
 }

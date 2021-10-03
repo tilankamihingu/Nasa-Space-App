@@ -1,6 +1,7 @@
-import React, {useContext, useState} from "react";
+import React, {createContext, useContext, useState} from "react";
 
 export const mainContext = React.createContext();
+export const DataContext = createContext();
 
 export function useMainContext(){
     return useContext(mainContext);
@@ -14,6 +15,7 @@ export function ContextProvider({children}){
     //need to re-render markers because user has change filter option
     const [reRenderMarkers, setReRenderMarkers] = useState(null);
 
+
     const value = {
         eventData,
         setEventData,
@@ -22,6 +24,8 @@ export function ContextProvider({children}){
         reRenderMarkers,
         setReRenderMarkers
     }
+
+    
 
     return(
         <mainContext.Provider value={value}>

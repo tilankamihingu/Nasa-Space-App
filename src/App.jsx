@@ -4,7 +4,11 @@ import Loader from './Components/Loader';
 import Map from './Components/Map';
 import Search from './Components/Search';
 import {useMainContext} from './Context/context';
+import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
+import Navbar from './Components/Navbar';
+import Instruction from './Components/Instruction';
 
+ 
 function App() {
   const {setEventData, reRenderMarkers} = useMainContext();
   const [loading, setLoading] = useState(false);
@@ -31,10 +35,20 @@ function App() {
     }
   }, [reRenderMarkers])
   return (
+    <Router>
     <div className="App">
-      {!loading ? <Map eventData={renderEvent} /> : <Loader />}
-      {!loading && <Search />}
+      <Navbar />
+      <Switch>
+        <Route exact path="/">
+          {!loading ? <Map eventData={renderEvent} /> : <Loader />}
+          {!loading && <Search />}
+      </Route>
+      <Route path="/instruction">
+        <Instruction />
+      </Route>
+      </Switch>
     </div>
+    </Router>
   );
 }
 

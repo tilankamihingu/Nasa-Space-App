@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
+import { Link } from 'react-router-dom';
 import {useMainContext} from '../Context/context';
 
 function Search() {
@@ -87,10 +88,10 @@ function Search() {
                         <tr key={ev.id}>
                             <td>{ev.title}</td>
                             <td>{ev.categories[0].title}</td>
-                            {ev.categories[0].title ? <td><a 
-                            href="#"
+                            {ev.categories[0].title ? <td><Link
+                            to="#"
                             onClick={() => {setSelectedEvent(ev)}}
-                            >Click Here</a></td> : <td></td>}
+                            >Click Here</Link></td> : <td></td>}
                         </tr>
                     )
                 })}

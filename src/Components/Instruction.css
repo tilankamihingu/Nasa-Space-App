@@ -40,7 +40,25 @@
 }
 
 .offer-details{
-
     margin-left: 20px;
+    margin-top: 20px;
+    padding-right: 5px;
+}
+
+.offer-details h1{
+    margin-bottom: 10px;
     margin-top: 10px;
+}
+
+@media screen and (max-width:700px){
+    .offer-details h1{
+        font-size: 20px;
+    }
+    .offer-details p{
+        font-size: 14px;
+    }
+
+    .offer-card{
+        height: 825px;
+    }
 }

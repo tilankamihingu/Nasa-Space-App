@@ -106,7 +106,7 @@ function Map({center, eventData}) {
                                     {pointCount}
                                 </div>
                             </section>
-                        )
+                        );
                     }
 
                     //Not a cluster. just a single point
@@ -121,7 +121,7 @@ function Map({center, eventData}) {
                                     setLocationInfo({id: cluster.properties.eventKey, title: cluster.properties.eventTitle})
                                 }}
                             />
-                        )
+                        );
                     }
                 })}
             </GoogleMapReact>
